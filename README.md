@@ -8,3 +8,5 @@ Syntaxis is exactly the same as in gmock. For example, to mock method ```methodW
 MOCK_METHOD11(methodWith11Args, int(int, int, int, int, int, int, int, int, int, int, int));
 ```
 
+# SAMPLES
+For the samples see [repo](https://github.com/apriorit/gmock-more-args-sample)
