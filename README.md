@@ -78,7 +78,7 @@ At first your project needs to know about [gmock-more-args](https://github.com/a
 ## Step 2: Declare mock method with more than 10 arguments
 Syntax is exactly the same as in gmock. For example, to mock method `methodWith11Args` with 11  `int` arguments and `int` result you have to write declaration: 
 ```cpp
-MOCK_METHOD11(methodWith11Args, int(int, int, int, int, int, int, int, int, int,  int, int));
+MOCK_METHOD11(methodWith11Args, int(int, int, int, int, int, int, int, int, int, int, int));
 ```
 
 # Samples
