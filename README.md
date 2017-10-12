@@ -15,7 +15,7 @@ This header-only library add [gmock](https://github.com/google/googletest/blob/m
 [Gmock](https://github.com/google/googletest/blob/master/googlemock) is a C++ framework for writing [mock classes](https://en.wikipedia.org/wiki/Mock_object). Mock methods are defined by `MOCK_METHODn()` marco. However it can handle up to 10 arguments. But in some cases we need more.
 
 For example we have such declaration of `WINAPI` function with 11 arguments:
-```
+```cpp
 NTSTATUS WINAPI NtCreateUserProcess(
     PHANDLE                         phProcess,
     PHANDLE                         threadHandle,
@@ -30,8 +30,8 @@ NTSTATUS WINAPI NtCreateUserProcess(
     PVOID                           attributeList
     );
 ```
-Before `gmock-more-args` we had to wrap arguments into structure:
-```
+Before [gmock-more-args](https://github.com/apriorit/gmock-more-args) we had to wrap arguments into structure:
+```cpp
 struct CreateUserProcessParams
 {
     PHANDLE                         phProcess;
@@ -48,11 +48,11 @@ struct CreateUserProcessParams
 };
 ```
 And pass it like a single argument:
-```
+```cpp
 MOCK_METHOD1(MockNtCreateUserProcess, NTSTATUS(CreateUserProcessParams params));
 ```
-With `gmock-more-args` we just use `MOCK_METHOD11`:
-```
+With [gmock-more-args](https://github.com/apriorit/gmock-more-args) we just use `MOCK_METHOD11`:
+```cpp
 MOCK_GLOBAL_FUNC11(MockNtCreateUserProcess, NTSTATUS(
     PHANDLE                         phProcess,
     PHANDLE                         ThreadHandle,
@@ -70,14 +70,14 @@ MOCK_GLOBAL_FUNC11(MockNtCreateUserProcess, NTSTATUS(
 # Usage
 
 ## Step 1: Adding includes
-At first your project needs to know about gmock-more-args.
+At first your project needs to know about [gmock-more-args](https://github.com/apriorit/gmock-more-args).
 
 1. Add `gmock-more-args/include` to the project include paths.
-2. Add `#include <gmock-more-args/gmock-more-args.h>` after `gmock` include.
+2. Add `#include <gmock-more-args/gmock-more-args.h>` after [gmock](https://github.com/google/googletest/blob/master/googlemock) include.
 
 ## Step 2: Declare mock method with more than 10 arguments
 Syntax is exactly the same as in gmock. For example, to mock method `methodWith11Args` with 11  `int` arguments and `int` result you have to write declaration: 
-```
+```cpp
 MOCK_METHOD11(methodWith11Args, int(int, int, int, int, int, int, int, int, int,  int, int));
 ```
 
@@ -85,7 +85,7 @@ MOCK_METHOD11(methodWith11Args, int(int, int, int, int, int, int, int, int, int,
 Samples live in the separate [repository](https://github.com/apriorit/gmock-more-args-sample).
 
 # License
-`gmock-more-args` is licensed under the MIT License. You can freely use it in your commercial or opensource software.
+[gmock-more-args](https://github.com/apriorit/gmock-more-args) is licensed under the MIT License. You can freely use it in your commercial or opensource software.
 
 # Version history
 
