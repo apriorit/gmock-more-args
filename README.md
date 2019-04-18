@@ -1,5 +1,6 @@
 # gmock-more-args [![Build Status](https://travis-ci.org/apriorit/gmock-more-args-sample.svg?branch=master)](https://travis-ci.org/apriorit/gmock-more-args-sample)
 This header-only library add [gmock](https://github.com/google/googletest/blob/master/googlemock) functionality for methods with number of arguments from 11 up to 15.
+Compatible with [gtest version 1.8.0](https://github.com/google/googletest/releases/tag/release-1.8.0)
 
 - [Introduction](#introduction)
 - [Usage](#usage)
@@ -88,6 +89,9 @@ Samples live in the separate [repository](https://github.com/apriorit/gmock-more
 [gmock-more-args](https://github.com/apriorit/gmock-more-args) is licensed under the MIT License. You can freely use it in your commercial or opensource software.
 
 # Version history
+
+## Version 1.0.0 (18 Apr 2019)
+- Specified compatibility with gtest 1.8.0
 
 ## Version 1.0.0 (12 Oct 2017)
 - Initial public release
