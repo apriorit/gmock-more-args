@@ -74,9 +74,10 @@ MOCK_GLOBAL_FUNC11(MockNtCreateUserProcess, NTSTATUS(
 
 # Compatibility
 Compatibility of [gmock-more-args](https://github.com/apriorit/gmock-more-args) with different [gMock versions](https://github.com/google/googletest/releases/):
-| mock-more-args | gMock |
+| gmock-more-args | gMock |
 |--|--|
-| 1.0.x | 1.8.1 | 
+| 1.0.x | 1.8.0 | 
+| - | 1.8.1 | 
 | 1.1.x | 1.10.0-1.11.0 |
 
 # Usage
@@ -105,7 +106,7 @@ Samples live in the separate [repository](https://github.com/apriorit/gmock-more
 - Added compatibility with gMock 1.11.0
 
 ## Version 1.1.0 (18 Apr 2019)
-- Added compatibility with gMock 1.8.1
+- Added compatibility with gMock 1.10.0
 
 ## Version 1.0.1 (18 Apr 2019)
 - Added compatibility with gMock 1.8.0
