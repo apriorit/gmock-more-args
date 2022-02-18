@@ -1,21 +1,22 @@
-# gmock-more-args [![Build Status](https://travis-ci.org/apriorit/gmock-more-args-sample.svg?branch=master)](https://travis-ci.org/apriorit/gmock-more-args-sample)
-This header-only library add [gmock](https://github.com/google/googletest/blob/master/googlemock) functionality for methods with number of arguments from 11 up to 15.
-Compatible with [gtest version 1.8.1-1.10.0](https://github.com/google/googletest/releases/)
+# gmock-more-args [![Build Status](https://app.travis-ci.com/apriorit/gmock-more-args-sample.svg?branch=master)](https://app.travis-ci.com/apriorit/gmock-more-args-sample)
+This header-only library add [gMock](https://github.com/google/googletest/blob/master/googlemock) functionality for methods with number of arguments from 11 up to 15.
 
 - [Introduction](#introduction)
+- [Compatibility](#compatibility)
 - [Usage](#usage)
   - [Step 1: Adding includes](#step-1-adding-includes)
   - [Step 2: Declare mock method with more than 10 arguments](#step-2-declare-mock-method-with-more-than-10-arguments)
 - [Samples](#samples)
 - [License](#license)
 - [Version history](#version-history)
+  - [Version 1.1.1 (18 Feb 2022)](#version-111-18-feb-2022)
   - [Version 1.1.0 (18 Apr 2019)](#version-110-18-apr-2019)
   - [Version 1.0.1 (18 Apr 2019)](#version-101-18-apr-2019)
   - [Version 1.0.0 (12 Oct 2017)](#version-100-12-oct-2017)
 
 # Introduction
 
-[Gmock](https://github.com/google/googletest/blob/master/googlemock) is a C++ framework for writing [mock classes](https://en.wikipedia.org/wiki/Mock_object). Mock methods are defined by `MOCK_METHODn()` marco. However it can handle up to 10 arguments. But in some cases we need more.
+[gMock](https://github.com/google/googletest/blob/master/googlemock) is a C++ framework for writing [mock classes](https://en.wikipedia.org/wiki/Mock_object). Mock methods are defined by `MOCK_METHODn()` marco. However it can handle up to 10 arguments. But in some cases we need more.
 
 For example we have such declaration of `WINAPI` function with 11 arguments:
 ```cpp
@@ -70,16 +71,24 @@ MOCK_GLOBAL_FUNC11(MockNtCreateUserProcess, NTSTATUS(
     PVOID                           AttributeLis
     ));
 ```
+
+# Compatibility
+Compatibility of [gmock-more-args](https://github.com/apriorit/gmock-more-args) with different [gMock versions](https://github.com/google/googletest/releases/):
+| mock-more-args | gMock |
+|--|--|
+| 1.0.x | 1.8.1 | 
+| 1.1.x | 1.10.0-1.11.0 |
+
 # Usage
 
 ## Step 1: Adding includes
 At first your project needs to know about [gmock-more-args](https://github.com/apriorit/gmock-more-args).
 
 1. Add `gmock-more-args/include` to the project include paths.
-2. Add `#include <gmock-more-args/gmock-more-args.h>` after [gmock](https://github.com/google/googletest/blob/master/googlemock) include.
+2. Add `#include <gmock-more-args/gmock-more-args.h>` after [gMock](https://github.com/google/googletest/blob/master/googlemock) include.
 
 ## Step 2: Declare mock method with more than 10 arguments
-Syntax is exactly the same as in gmock. For example, to mock method `methodWith11Args` with 11  `int` arguments and `int` result you have to write declaration: 
+Syntax is exactly the same as in gMock. For example, to mock method `methodWith11Args` with 11  `int` arguments and `int` result you have to write declaration: 
 ```cpp
 MOCK_METHOD11(methodWith11Args, int(int, int, int, int, int, int, int, int, int, int, int));
 ```
@@ -92,11 +101,14 @@ Samples live in the separate [repository](https://github.com/apriorit/gmock-more
 
 # Version history
 
+## Version 1.1.1 (18 Feb 2022)
+- Added compatibility with gMock 1.11.0
+
 ## Version 1.1.0 (18 Apr 2019)
-- Specified compatibility with gtest 1.8.1
+- Added compatibility with gMock 1.8.1
 
 ## Version 1.0.1 (18 Apr 2019)
-- Specified compatibility with gtest 1.8.0
+- Added compatibility with gMock 1.8.0
 
 ## Version 1.0.0 (12 Oct 2017)
 - Initial public release
